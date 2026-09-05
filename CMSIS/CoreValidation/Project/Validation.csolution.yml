@@ -7,6 +7,7 @@ solution:
     - for-compiler: GCC
       C-CPP:
         - -masm-syntax-unified
+        - -Wall
 
   packs:
     - pack: ARM::CMSIS
@@ -54,6 +55,15 @@ solution:
 
     #Target: CM35PNS
     - type: CM35PNS
+
+    #Target: CM52
+    - type: CM52
+
+    #Target: CM52S
+    - type: CM52S
+
+    #Target: CM52NS
+    - type: CM52NS
 
     #Target: CM55
     - type: CM55
@@ -106,6 +116,7 @@ solution:
         - +CM23NS
         - +CM33NS
         - +CM35PNS
+        - +CM52NS
         - +CM55NS
         - +CM85NS
 

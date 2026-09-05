@@ -43,10 +43,7 @@ layer:
             - +CM0plus
             - +CM3
             - +CM4
-            - +CM4FP
             - +CM7
-            - +CM7SP
-            - +CM7DP
         - file: ../../../Source/CV_MPU_ARMv8.c
           for-context:
             - +CM23
@@ -58,6 +55,9 @@ layer:
             - +CM35P
             - +CM35PS
             - +CM35PNS
+            - +CM52
+            - +CM52S
+            - +CM52NS
             - +CM55
             - +CM55S
             - +CM55NS
