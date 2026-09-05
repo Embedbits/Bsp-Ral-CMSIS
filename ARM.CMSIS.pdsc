@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<package schemaVersion="1.7.36" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.36/schema/PACK.xsd">
+<package schemaVersion="1.7.40" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.40/schema/PACK.xsd">
   <name>CMSIS</name>
   <description overview="./CMSIS/Documentation/Overview.md">CMSIS (Common Microcontroller Software Interface Standard)</description>
   <vendor>ARM</vendor>
@@ -13,15 +13,10 @@
   <url>https://www.keil.com/pack/</url>
 
   <releases>
-    <release version="6.1.0">
+    <release version="6.2.0-dev">
       Active development ...
-      Added Overview.md for display on web index service
-      CMSIS-Core: 6.1.0
-        - Added support for Cortex-M52
-        - Added deprecated CoreDebug symbols for CMSIS 5 compatibility
-        - Added define CMSIS_DISABLE_DEPRECATED to hide deprecated symbols
-      CMSIS-Driver: 2.10.0
-        - Updated USB Host Interface API 2.4.0 (deprecated API for OHCI/EHCI Host Controller Interface (HCI))
+      CMSIS-Driver: 2.11.0
+        - Added vStream Driver API 1.0.0
     </release>
     <release version="5.9.0" date="2022-05-02">
       CMSIS-Core(M): 5.6.0
@@ -431,75 +426,76 @@
       <description>RTOS Kernel system tick timer interface</description>
       <files>
         <file category="header" name="CMSIS/RTOS2/Include/os_tick.h"/>
+        <file category="doc" name="CMSIS/Documentation/html/RTOS2/group__CMSIS__RTOS__TickAPI.html"/>
       </files>
     </api>
     <!-- CMSIS-RTOS API -->
     <api Cclass="CMSIS" Cgroup="RTOS2" Capiversion="2.3.0" exclusive="1">
       <description>CMSIS-RTOS API for Cortex-M, SC000, and SC300</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/html/RTOS2/index.html"/>
+        <file category="doc" name="CMSIS/Documentation/html/RTOS2/group__CMSIS__RTOS.html"/>
         <file category="header" name="CMSIS/RTOS2/Include/cmsis_os2.h"/>
       </files>
     </api>
     <!-- CMSIS Driver API -->
     <api Cclass="CMSIS Driver" Cgroup="USART" Capiversion="2.4.0" exclusive="0">
-      <description>USART Driver API for Cortex-M</description>
+      <description>USART (Universal Synchronous/Asynchronous Receiver/Transmitter) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__usart__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_USART.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="SPI" Capiversion="2.3.0" exclusive="0">
-      <description>SPI Driver API for Cortex-M</description>
+      <description>SPI (Serial Peripheral Interface) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__spi__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_SPI.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="SAI" Capiversion="1.2.0" exclusive="0">
-      <description>SAI Driver API for Cortex-M</description>
+      <description>SAI (Serial Audio Interface) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__sai__interface__gr.html"/>
         <file category="header" name="CMSIS/Driver/Include/Driver_SAI.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="I2C" Capiversion="2.4.0" exclusive="0">
-      <description>I2C Driver API for Cortex-M</description>
+      <description>I2C (Inter-Integrated Circuit) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__i2c__interface__gr.html"/>
         <file category="header" name="CMSIS/Driver/Include/Driver_I2C.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="CAN" Capiversion="1.3.0" exclusive="0">
-      <description>CAN Driver API for Cortex-M</description>
+      <description>CAN (Controller Area Network) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__can__interface__gr.html"/>
         <file category="header" name="CMSIS/Driver/Include/Driver_CAN.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Flash" Capiversion="2.3.0" exclusive="0">
-      <description>Flash Driver API for Cortex-M</description>
+      <description>NOR Flash Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__flash__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_Flash.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="MCI" Capiversion="2.4.0" exclusive="0">
-      <description>MCI Driver API for Cortex-M</description>
+      <description>MCI (Memory Card Interface) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__mci__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_MCI.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="NAND" Capiversion="2.4.0" exclusive="0">
-      <description>NAND Flash Driver API for Cortex-M</description>
+      <description>NAND Flash Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__nand__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_NAND.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Ethernet" Capiversion="2.2.0" exclusive="0">
-      <description>Ethernet MAC and PHY Driver API for Cortex-M</description>
+      <description>Ethernet MAC (Media Access Control) and PHY (Physical layer) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_MAC.h" />
@@ -507,53 +503,60 @@
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Capiversion="2.2.0" exclusive="0">
-      <description>Ethernet MAC Driver API for Cortex-M</description>
+      <description>Ethernet MAC (Media Access Control) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__mac__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_MAC.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Capiversion="2.2.0" exclusive="0">
-      <description>Ethernet PHY Driver API for Cortex-M</description>
+      <description>Ethernet PHY (Physical layer) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__phy__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_PHY.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="USB Device" Capiversion="2.3.0" exclusive="0">
-      <description>USB Device Driver API for Cortex-M</description>
+      <description>USB (Universal Serial Bus) Device Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__usbd__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_USBD.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="USB Host" Capiversion="2.4.0" exclusive="0">
-      <description>USB Host Driver API for Cortex-M</description>
+      <description>USB (Universal Serial Bus) Host Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__usbh__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_USBH.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="GPIO" Capiversion="1.0.0" exclusive="0">
-      <description>GPIO Driver API for Cortex-M</description>
+      <description>GPIO (General-Purpose Input/Output) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__gpio__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_GPIO.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="WiFi" Capiversion="1.1.0" exclusive="0">
-      <description>WiFi driver</description>
+      <description>WiFi (Wireless network) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__wifi__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_WiFi.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="VIO" Capiversion="1.0.0" exclusive="1">
-      <description>Virtual I/O</description>
+      <description>Virtual I/O abstraction for simple peripherals (i.e. button, LED)</description>
       <files>
         <file category="doc"    name="CMSIS/Documentation/html/Driver/group__vio__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/VIO/Include/cmsis_vio.h" />
         <file category="other"  name="CMSIS/Driver/VIO/cmsis_vio.scvd" />
+      </files>
+    </api>
+    <api Cclass="CMSIS Driver" Cgroup="vStream" Capiversion="1.0.0" exclusive="0">
+      <description>Virtual Streaming interface Driver API</description>
+      <files>
+        <file category="doc"    name="CMSIS/Documentation/html/Driver/group__vstream__interface__gr.html" />
+        <file category="header" name="CMSIS/Driver/vStream/Include/cmsis_vstream.h" />
       </files>
     </api>
   </apis>
@@ -616,11 +619,13 @@
     <condition id="TrustZone">
       <description>TrustZone</description>
       <require Dtz="TZ"/>
+      <deny Dsecure="TZ-disabled"/>
     </condition>
     <condition id="TZ Secure">
       <description>TrustZone (Secure)</description>
       <require Dtz="TZ"/>
-      <require Dsecure="Secure"/>
+      <accept Dsecure="Secure"/>
+      <accept Dsecure="Secure-only"/>
     </condition>
 
     <!-- OS Tick -->
@@ -646,7 +651,7 @@
 
   <components>
     <!-- CMSIS-Core component -->
-    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.1.0"  condition="ARMv6_7_8-M Device" >
+    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.1.1"  condition="ARMv6_7_8-M Device" >
       <description>CMSIS-CORE for Cortex-M, SC000, SC300, Star-MC1, ARMv8-M, ARMv8.1-M</description>
       <files>
         <!-- CPU independent -->
@@ -659,7 +664,7 @@
       </files>
     </component>
 
-    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.1.0"  condition="ARMv7-A Device" >
+    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.1.1"  condition="ARMv7-A Device" >
       <description>CMSIS-CORE for Cortex-A</description>
       <files>
         <!-- CPU independent -->
@@ -702,64 +707,54 @@
     <component Cclass="CMSIS Driver" Cgroup="USART" Csub="Custom" Cversion="1.0.0" Capiversion="2.4.0" custom="1">
       <description>Access to #include Driver_USART.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_USART.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_USART.c" select="USART Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="SPI" Csub="Custom" Cversion="1.0.0" Capiversion="2.3.0" custom="1">
       <description>Access to #include Driver_SPI.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_SPI.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_SPI.c" select="SPI Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="SAI" Csub="Custom" Cversion="1.0.0" Capiversion="1.2.0" custom="1">
       <description>Access to #include Driver_SAI.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_SAI.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_SAI.c" select="SAI Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="I2C" Csub="Custom" Cversion="1.0.0" Capiversion="2.4.0" custom="1">
       <description>Access to #include Driver_I2C.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_I2C.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_I2C.c" select="I2C Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="CAN" Csub="Custom" Cversion="1.0.0" Capiversion="1.3.0" custom="1">
       <description>Access to #include Driver_CAN.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_CAN.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_CAN.c" select="CAN Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="Flash" Csub="Custom" Cversion="1.0.0" Capiversion="2.3.0" custom="1">
       <description>Access to #include Driver_Flash.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_Flash.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_Flash.c" select="Flash Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="MCI" Csub="Custom" Cversion="1.0.0" Capiversion="2.4.0" custom="1">
       <description>Access to #include Driver_MCI.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_MCI.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_MCI.c" select="MCI Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="NAND" Csub="Custom" Cversion="1.0.0" Capiversion="2.4.0" custom="1">
       <description>Access to #include Driver_NAND.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_NAND.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_NAND.c" select="NAND Flash Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="Ethernet" Csub="Custom" Cversion="1.0.0" Capiversion="2.2.0" custom="1">
       <description>Access to #include Driver_ETH_PHY/MAC.h files and code templates for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_ETH_MAC.h" />
-        <file category="header" name="CMSIS/Driver/Include/Driver_ETH_PHY.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_PHY.c" select="Ethernet PHY and MAC Driver"/>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_MAC.c" select="Ethernet PHY and MAC Driver"/>
       </files>
@@ -767,42 +762,36 @@
     <component Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Csub="Custom" Cversion="1.0.0" Capiversion="2.2.0" custom="1">
       <description>Access to #include Driver_ETH_MAC.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_ETH_MAC.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_MAC.c" select="Ethernet MAC Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Csub="Custom" Cversion="1.0.0" Capiversion="2.2.0" custom="1">
       <description>Access to #include Driver_ETH_PHY.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_ETH_PHY.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_PHY.c" select="Ethernet PHY Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="USB Device" Csub="Custom" Cversion="1.0.0" Capiversion="2.3.0" custom="1">
       <description>Access to #include Driver_USBD.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_USBD.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_USBD.c" select="USB Device Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="USB Host" Csub="Custom" Cversion="1.0.0" Capiversion="2.4.0" custom="1">
       <description>Access to #include Driver_USBH.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_USBH.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_USBH.c" select="USB Host Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="GPIO" Csub="Custom" Cversion="1.0.0" Capiversion="1.0.0" custom="1">
       <description>Access to #include Driver_GPIO.h file and code template for custom implementation</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_GPIO.h" />
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_GPIO.c" select="GPIO Driver"/>
       </files>
     </component>
     <component Cclass="CMSIS Driver" Cgroup="WiFi" Csub="Custom" Cversion="1.0.0" Capiversion="1.1.0" custom="1">
       <description>Access to #include Driver_WiFi.h file</description>
       <files>
-        <file category="header" name="CMSIS/Driver/Include/Driver_WiFi.h"/>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_WiFi.c" select="WiFi Driver"/>
       </files>
     </component>
@@ -818,6 +807,14 @@
       <description>Virtual I/O implementation using memory only</description>
       <files>
         <file category="sourceC" name="CMSIS/Driver/VIO/Source/vio_memory.c"/>
+      </files>
+    </component>
+
+    <!-- Virtual Streaming custom component -->
+    <component Cclass="CMSIS Driver" Cgroup="vStream" Csub="Custom" Cversion="1.0.0" Capiversion="1.0.0" custom="1">
+      <description>Virtual Streaming interface Driver custom implementation template</description>
+      <files>
+        <file category="sourceC" name="CMSIS/Driver/vStream/Template/vstream.c" attr="template" select="vStream Driver"/>
       </files>
     </component>
 

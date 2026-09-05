@@ -29,7 +29,7 @@ Here is a simple example that shows how two thread can communicate with each oth
 \image html simple_signal.png "Simple event communication"
 
 The following steps are required to use event flags:
--# In the thread that is supposed to send a event with id sig1_id, call the set function:
+-# In the thread that is supposed to send an event with id sig1_id, call the set function:
 \code
 osDelay(1000U);                                           // wait for 1 second
 osEventFlagsSet(sig1_id, 0x0001U);                        // set the flag 0x0001U for event sig1_id
@@ -133,7 +133,7 @@ set to \token{NULL}, i.e. kernel memory allocation is used for the event control
 \code
 #include "cmsis_os2.h"                          // CMSIS RTOS header file
  
-osEventFlagsId_t evt_id;                        // message queue id
+osEventFlagsId_t evt_id;                        // event flags id
  
 int Init_Events (void) {
  
@@ -297,7 +297,7 @@ The function \b osEventFlagsGetName returns the pointer to the name string of th
 \code
 #include "cmsis_os2.h"                          // CMSIS RTOS header file
  
-osEventFlagsId_t evt_id;                        // event flasg id
+osEventFlagsId_t evt_id;                        // event flags id
  
 void EvtFlagsGetName_example (void)  {
   char *name;
