@@ -1,6 +1,6 @@
 
 /*
- * Auto generated Run-Time-Environment Component Configuration File
+ * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
  * Project: 'Blinky' 
@@ -16,11 +16,18 @@
  */
 #define CMSIS_device_header "ARMCM3.h"
 
-#define RTE_CMSIS_RTOS                  /* CMSIS-RTOS */
-        #define RTE_CMSIS_RTOS_RTX5             /* CMSIS-RTOS Keil RTX5 */
+/*  ARM::CMSIS:RTOS2:Keil RTX5:Library:5.5.2 */
 #define RTE_CMSIS_RTOS2                 /* CMSIS-RTOS2 */
         #define RTE_CMSIS_RTOS2_RTX5            /* CMSIS-RTOS2 Keil RTX5 */
+/*  ARM::CMSIS:RTOS:Keil RTX5:5.5.2 */
+#define RTE_CMSIS_RTOS                  /* CMSIS-RTOS */
+        #define RTE_CMSIS_RTOS_RTX5             /* CMSIS-RTOS Keil RTX5 */
+/*  Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0 */
+#define RTE_Compiler_EventRecorder
+          #define RTE_Compiler_EventRecorder_DAP
+/*  Keil.ARM Compiler::Compiler:I/O:STDOUT:EVR:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
-          #define RTE_Compiler_IO_STDOUT_ITM      /* Compiler I/O: STDOUT ITM */
+          #define RTE_Compiler_IO_STDOUT_EVR      /* Compiler I/O: STDOUT EVR */
+
 
 #endif /* RTE_COMPONENTS_H */
